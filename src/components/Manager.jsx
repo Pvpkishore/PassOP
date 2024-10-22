@@ -48,19 +48,18 @@ function Manager() {
     const Savepassword = () => {
         if (form.password != '' && form.site != '' && form.username != '') {
             setpasswordArray([...passwordArray, {...form , id:uuidv4()}])
-            localStorage.setItem("passwords", JSON.stringify([...passwordArray, {...form, id:uuidv4()}]))  //js object to json data
-            //   console.log(JSON.stringify([...passwordArray,form])) 
-            setform({ site: '', username: '', password: '' })
-            toast.success('password saved successfully!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
+            localStorage.setItem("passwords", JSON.stringify([...passwordArray, {...form, id:uuidv4()}]))  //js object to json data 
+            setform({ site: '', username: '', password: '' });
+              toast.success('Password saved!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
         }
         else {
             toast.warn('please fill all the fields!', {
@@ -81,16 +80,16 @@ function Manager() {
              const updatedPasswords = passwordArray.filter(item => item.id !== id);
              setpasswordArray(updatedPasswords); 
              localStorage.setItem("passwords", JSON.stringify(updatedPasswords))  //js object to json data
-             toast.error('password deleted succesfully!',{
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            });
+            toast.error('Password deleted successfully!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 
