@@ -50,16 +50,16 @@ function Manager() {
             setpasswordArray([...passwordArray, {...form , id:uuidv4()}])
             localStorage.setItem("passwords", JSON.stringify([...passwordArray, {...form, id:uuidv4()}]))  //js object to json data 
             setform({ site: '', username: '', password: '' });
-              toast.success('Password saved!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
+              // toast.success('Password saved!', {
+              //       position: "top-right",
+              //       autoClose: 5000,
+              //       hideProgressBar: false,
+              //       closeOnClick: true,
+              //       pauseOnHover: true,
+              //       draggable: true,
+              //       progress: undefined,
+              //       theme: "light",
+              //       });
         }
         else {
             toast.warn('please fill all the fields!', {
@@ -80,16 +80,16 @@ function Manager() {
              const updatedPasswords = passwordArray.filter(item => item.id !== id);
              setpasswordArray(updatedPasswords); 
              localStorage.setItem("passwords", JSON.stringify(updatedPasswords))  //js object to json data
-            toast.error('Password deleted successfully!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
+            // toast.error('Password deleted successfully!', {
+            //     position: "top-right",
+            //     autoClose: 5000,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            //     });
         }
     }
 
